@@ -87,6 +87,7 @@ double CANSparkMaxEncoder::GetEncoderTickVelocity() const {
   #endif
 }
 
+
 TalonFXEncoder::TalonFXEncoder(ctre::phoenix::motorcontrol::can::TalonFX *controller, double reduction)
   : Encoder(2048, reduction, 0), _controller(controller) {
     controller->ConfigSelectedFeedbackSensor(ctre::phoenix::motorcontrol::TalonFXFeedbackDevice::IntegratedSensor);

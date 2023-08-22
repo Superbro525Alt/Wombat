@@ -55,6 +55,8 @@ namespace wom {
     frc::Encoder _nativeEncoder;
   };
 
+
+
   class SimCANSparkMaxEncoder;
   class CANSparkMaxEncoder : public Encoder {
    public:

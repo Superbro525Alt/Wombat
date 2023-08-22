@@ -4,6 +4,9 @@
 
 #include <units/acceleration.h>
 
+#include <frc/smartdashboard/SmartDashboard.h>
+
+
 using namespace wom;
 
 void ElevatorConfig::WriteNT(std::shared_ptr<nt::NetworkTable> table) {
@@ -134,4 +137,9 @@ units::meters_per_second_t Elevator::GetElevatorVelocity() const {
 
 units::meters_per_second_t Elevator::MaxSpeed() const {
   return _config.leftGearbox.motor.Speed((_config.mass * 9.81_mps_sq) * _config.radius, 12_V) / 1_rad * _config.radius;
+}
+
+void Elevator::ZeroEncoder() {
+    _config.elevatorEncoder.SetPosition(0);
+    frc::SmartDashboard::PutString("Reset Encoder", "Reset Encoder");
 }

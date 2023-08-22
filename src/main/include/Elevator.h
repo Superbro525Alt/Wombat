@@ -66,6 +66,8 @@ namespace wom {
     units::meter_t GetHeight() const;
     units::meters_per_second_t MaxSpeed() const;
     units::meters_per_second_t GetElevatorVelocity() const;
+
+    void ZeroEncoder();
   
    private:
     units::volt_t _setpointManual{0};
